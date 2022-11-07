@@ -12,7 +12,7 @@
          <%= posts.content.substring(0,100)+ "..." %>
        </p>
        <a href="/posts/<%= posts.title %>" class="btn btn-info">Read More</a>
-       <a href="/compose" class="btn btn-primary">Edit</a>
+       <a href="/edit/posts/:<%= posts.title %>" class="btn btn-primary">Edit</a>
      </div>
    <% }); %>
  </div>

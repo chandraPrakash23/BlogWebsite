@@ -60,8 +60,18 @@ app.get("/posts/:postName",function(req,res){
 });
 
 
-
-
+app.get("/edit/posts/:postName",function(req,res){
+  const title = _.lowerCase(req.params.postName);
+  posts.forEach(function(post){
+    const storedTitle = _.lowerCase(post.title);
+    if(storedTitle===title){
+      res.render("compose",{
+        title:post.title,
+        content:post.content
+      });
+    }
+  });
+});
 
 
 
